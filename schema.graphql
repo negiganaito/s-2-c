@@ -1,0 +1,53 @@
+type Query {
+  user: User
+  categories: [Category]
+  brands: [Brand]
+}
+
+type User {
+  userProfile_renderer: UserProfileRenderer
+}
+
+type UserProfileRenderer {
+  age: Int
+  name: String!
+  js(module: String!, id: String): JSDependency!
+}
+
+scalar JSDependency
+
+type Category {
+  id: String!
+  name: String!
+  parentId: String
+}
+
+type Brand {
+  id: String!
+  name: String!
+}
+
+type Mutation {
+  supplies_create_category(input: SuppliesCreateCategoryInput!): SuppliesCreateCategoryPayload
+  supplies_create_brand(input: SuppliesCreateBrandInput!): SuppliesCreateBrandPayload
+}
+
+type SuppliesCreateCategoryPayload {
+  categories: [Category]
+  clientMutationId: String
+}
+
+input SuppliesCreateCategoryInput {
+  name: String!
+  clientMutationId: String
+}
+
+type SuppliesCreateBrandPayload {
+  brands: [Category]
+  clientMutationId: String
+}
+
+input SuppliesCreateBrandInput {
+  name: String!
+  clientMutationId: String
+}

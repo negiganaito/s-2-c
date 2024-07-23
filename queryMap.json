@@ -10,4 +10,3 @@
   "e057d92f57f0eee3a3e0018670a54728": "mutation useSuppliesCreateBrandDialogMutation(\n  $input: SuppliesCreateBrandInput!\n) {\n  supplies_create_brand(input: $input) {\n    brands {\n      id\n      name\n    }\n  }\n}\n",
   "ed3e716f617ff0d368906ce615992eb3": "query CategoriesSearchBarTypeaheadDataSourceQuery {\n  categories {\n    id\n    name\n    parentId\n  }\n}\n"
 }
-
